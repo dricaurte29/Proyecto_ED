@@ -23,7 +23,7 @@ public class Estr {
         ListaS cov1 = new ListaS("faca");
         ListaS cov2 = new ListaS("cod");
         cov.add("usme", 0);
-        cov.add("chapinero", 1);
+        cov.add("bronx", 1);
         cov.add("usaquen", 2);
         cov.add("suba", 3);
         cov.add("cota", 4);
