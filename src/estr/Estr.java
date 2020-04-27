@@ -20,21 +20,16 @@ public class Estr {
         
         ListaL base = new ListaL();
         ListaS cov = new ListaS("covid");
-        ListaS cov1 = new ListaS("faca");
-        ListaS cov2 = new ListaS("cod");
+
         cov.add("usme", 0);
         cov.add("bronx", 1);
         cov.add("usaquen", 2);
         cov.add("suba", 3);
         cov.add("cota", 4);
         base.add(cov);
-        base.add(cov1);
-        base.add(cov2);
-        base.eliminar("covid");
-        System.out.println(base.head.nombre);
-        System.out.println(base.fin.nombre);
-        /**
-         * System.out.println("Registro de ubicaciones");
+
+        
+        System.out.println("Registro de ubicaciones");
         System.out.println("Ingrese su nombre:  ");
         
         Scanner sc = new Scanner(System.in);
@@ -51,8 +46,7 @@ public class Estr {
         base.add(lista1);
         System.out.println(base.buscar(n).nombre);
         System.out.println("Coincidencia:  "+base.buscar(n).compare(base.buscar("covid")));
-        * /
-        ***/ 
+ 
         
         
         
