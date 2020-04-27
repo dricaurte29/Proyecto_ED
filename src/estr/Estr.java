@@ -21,7 +21,7 @@ public class Estr {
         ListaL base = new ListaL();
         ListaS cov = new ListaS("covid");
 
-        cov.add("usme", 0);
+        cov.add("soacha", 0);
         cov.add("bronx", 1);
         cov.add("usaquen", 2);
         cov.add("suba", 3);
