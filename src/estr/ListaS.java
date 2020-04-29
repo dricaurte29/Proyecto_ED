@@ -43,8 +43,9 @@ public class ListaS {
       for(int i =0;i<ruta;i++){
           t = t.verNext();
       }
-      return t.verInfo();
+      return t;
   }
+  
 
   int compare(ListaS lista) {
 	  // recibe la lista de elementos que se quiere comparar con los datos ya almacenados

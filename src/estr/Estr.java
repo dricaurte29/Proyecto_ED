@@ -44,6 +44,7 @@ public class Estr {
             
         }
         base.add(lista1);
+        //base.guardar(cov.ver(2));
         System.out.println(base.buscar(n).nombre);
         System.out.println("Coincidencia:  "+base.buscar(n).compare(base.buscar("covid")));
  

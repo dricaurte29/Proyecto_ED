@@ -5,6 +5,11 @@
  */
 package estr;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
 /**
  *
  * @author David Andrés
@@ -81,5 +86,27 @@ public class ListaL {
       }
       }
       return g;
+  }
+  void guardar (Object o){
+      FileOutputStream ficha = null;
+      try{
+          ficha = new FileOutputStream("base.txt");
+          ObjectOutputStream t = new ObjectOutputStream(ficha);
+          t.writeObject(o);
+      }
+      catch(FileNotFoundException ex){
+          ex.printStackTrace();
+      }
+      catch(IOException ex){
+          ex.printStackTrace();
+          
+      }finally{
+      try{
+      ficha.close();
+      }
+      catch(IOException es){
+          es.printStackTrace();
+                  }
+      }
   }
 }
