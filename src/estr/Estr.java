@@ -14,8 +14,8 @@ import java.util.Scanner;
  * @author David Andrés
  */
 public class Estr {
-
-    
+public ListaL base;
+public ListaS cov;   
     public static void main(String[] args) {
         
         ListaL base = new ListaL();
@@ -28,25 +28,25 @@ public class Estr {
         cov.add("cota", 4);
         base.add(cov);
 
-        
-        System.out.println("Registro de ubicaciones");
-        System.out.println("Ingrese su nombre:  ");
-        
+        System.out.println("Opciones");
+        System.out.println("1: Registrar ubicaciones");
+        System.out.println("2: Ver ubicaciones peligrosas");
+        System.out.println("3. Ver base datos");
         Scanner sc = new Scanner(System.in);
-        String n = sc.nextLine();
-        ListaS lista1 = new ListaS(n);
-        
-        for(int r = 0; r<5; r++){
-            System.out.print("Ubicación a las "+r+" horas:  ");
-            String f = sc.nextLine();
-            lista1.add(f, r);
-            
+        int e = sc.nextInt();
+        if (e == 1){
+            Registro r = new Registro();
+            r.Registro();
+        }
+        if (e == 2){
+             Mapa mp = new Mapa();
+            mp.mostrar();
             
         }
-        base.add(lista1);
-        //base.guardar(cov.ver(2));
-        System.out.println(base.buscar(n).nombre);
-        System.out.println("Coincidencia:  "+base.buscar(n).compare(base.buscar("covid")));
+        if (e == 3){
+            Base bb = new Base();
+            bb.base();
+        }
  
         
         

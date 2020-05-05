@@ -38,7 +38,7 @@ public class ListaS {
       }
       tam++;
   }
-  Object ver (int ruta){
+  Nodo ver (int ruta){
       Nodo t = head;
       for(int i =0;i<ruta;i++){
           t = t.verNext();
@@ -70,5 +70,12 @@ public class ListaS {
           return cc;
 	  //System.out.println(new_list.tam);
 	  //return new_list;
+  }
+  public void mostrar(){
+      Nodo t = head;
+      for(int i =0;i<tam;i++){
+          System.out.println(t.getLugar());
+          t = t.verNext();
+      }
   }
 }
