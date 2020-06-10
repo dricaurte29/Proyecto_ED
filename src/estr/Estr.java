@@ -22,11 +22,7 @@ public ListaS cov;
         ListaL base = new ListaL();
         ListaS cov = new ListaS("covid");
 
-        cov.add("soacha", 0);
-        cov.add("bronx", 1);
-        cov.add("usaquen", 2);
-        cov.add("suba", 3);
-        cov.add("cota", 4);
+
         base.add(cov);
 /***
         System.out.println("Opciones");
