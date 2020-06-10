@@ -9,6 +9,7 @@ package estr;
 public class ListaS {
   private Nodo head;
   public String nombre;
+  public int contagio;
   int tam;
   private ListaS next;
   ListaS(String s){
@@ -26,13 +27,13 @@ public class ListaS {
   void setNext(ListaS s){
       this.next = s;
   }
-  void  add (String a,int b){
+  void  add (double lon, double lat,int b){
       if(head == null){
-          head = new Nodo(a,b);
+          head = new Nodo(lon, lat,b);
       }
       else{
           Nodo t = head;
-          Nodo n= new Nodo(a,b);
+          Nodo n= new Nodo(lon, lat ,b);
           n.agregar(t);
           head = n; 
       }

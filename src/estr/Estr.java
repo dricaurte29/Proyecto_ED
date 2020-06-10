@@ -6,7 +6,8 @@
 package estr;
 
 import java.util.Scanner;
-
+import java.sql.*;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -27,7 +28,7 @@ public ListaS cov;
         cov.add("suba", 3);
         cov.add("cota", 4);
         base.add(cov);
-
+/***
         System.out.println("Opciones");
         System.out.println("1: Registrar ubicaciones");
         System.out.println("2: Ver ubicaciones peligrosas");
@@ -48,9 +49,25 @@ public ListaS cov;
             bb.base();
         }
  
+        **/
         
-        
-        
+        try{
+            String url = "jdbc:mysql://www.viviendolo.com:3306/u804872666_ed20";
+            String usuario = "u804872666_ed20";
+            String clave = "Ed.2020";
+            Connection cn = DriverManager.getConnection(url, usuario, clave);
+            PreparedStatement pat = cn.prepareStatement("select * from ubicaciones where ID = ?");
+            pat.setString(1, "1");
+            ResultSet rs = pat.executeQuery();
+            if(rs.next()){
+                String result = rs.getString("ubicacion");
+                String result1 = rs.getString("hora");
+            }else {
+                JOptionPane.showMessageDialog(null, "fail");
+            }
+        } catch (Exception e){
+            System.out.println("error"+e);
+        }
 
     }
     

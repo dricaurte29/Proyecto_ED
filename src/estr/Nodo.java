@@ -10,11 +10,13 @@ package estr;
  * @author David Andrés
  */
 public class Nodo {
-    private String lugar;
+    private double lon;
+    private double lat;
     private int hora;
     private Nodo next;
-    Nodo(String lugar,int hora){
-        this.lugar = lugar;
+    Nodo(double lon, double lat ,int hora){
+        this.lon = lon;
+        this.lat = lat;
         this.hora = hora;
         this.next = null;
     }
@@ -24,13 +26,10 @@ public class Nodo {
     void agregar (Nodo nd){
         this.next = nd;
     }
-    String verInfo(){
-        return lugar+" "+hora; 
-        
-    }
+
 
     String getLugar() {
-        return lugar;
+        return lat +" "+ lon;
     }
     int getHora() {
         return hora;
