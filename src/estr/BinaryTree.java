@@ -20,7 +20,7 @@ private Node2 root;
         }
 	}
 	
-	public void insert(double lat, double lon) {
+	public void insertar(double lat, double lon) {
 		if (find(lat, lon, this.root) == null) {
 			insertElem(lat, lon);
 		}
