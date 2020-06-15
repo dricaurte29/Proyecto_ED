@@ -90,6 +90,17 @@ private Node2 root;
         return values;
     } 
 	
+	public void printTree(Node R) { 
+		if (R != null) {
+			// preorder traversal
+			System.out.print(R.getKey());
+	        System.out.print(", ");
+	        System.out.println(R.getLon()); 
+	        printTree(R.getLeft()); 
+	        printTree(R.getRight()); 
+		}
+    }
+	
 	public Node2 getRoot() {
 		return root;
 	}
@@ -97,4 +108,6 @@ private Node2 root;
 	public void setRoot(Node2 root) {
 		this.root = root;
 	}
+	
+	
 }
