@@ -20,19 +20,19 @@ private Node2 root;
         }
 	}
 	
-	public void insertar(double lat, double lon) {
+	public void insert(double lat, double lon) {
 		if (find(lat, lon, this.root) == null) {
 			insertElem(lat, lon);
 		}
 	}
 	
 	public void insertElem(double k, double lon) {
-		// inserta el valor (k,lon) en el arbol llamando la funciÛn insert
+		// inserta el valor (k,lon) en el arbol llamando la funci√≥n insert
 		this.root = insert(k, lon, this.root);
 	}
 	
 	public Node2 insert (double key, double lon, Node2 R) { 
-		// inserta un valor en el arbol por recursiÛn
+		// inserta un valor en el arbol por recursi√≥n
 		// si el nodo es nulo, devuelve un nodo con el key
 		if (R == null) R = new Node2(key, lon);  
 		// si el valor k es menor al key del nodo R, inserta 
@@ -46,13 +46,13 @@ private Node2 root;
 	}
 	
 	public void deleteElem(double k, double lon) { 
-		// elimina el valor (k,lon) en el arbol llamando la funciÛn delete
+		// elimina el valor (k,lon) en el arbol llamando la funci√≥n delete
         this.root = delete(k, lon, this.root); 
     } 
   
     public Node2 delete(double k, double l, Node2 R) { 
-    	// inserta un valor en el arbol por recursiÛn
-        // si el arbol est· vacÌo, devuelve un nodo con el key
+    	// inserta un valor en el arbol por recursi√≥n
+        // si el arbol est√° vac√≠o, devuelve un nodo con el key
         if (R == null)  return R; 
         // busca el nodo con los valores k,l
         if (k < R.getKey()) R.setLeft(delete(k, l, R.getLeft())); 
@@ -75,7 +75,7 @@ private Node2 root;
     }
     
     public double[] minValue(Node2 R) { 
-    	// devuelve el valor mÌnimo en un arbol
+    	// devuelve el valor m√≠nimo en un arbol
         double min = R.getKey(); 
         double lon = R.getLon();
         double values[] = new double[2];
