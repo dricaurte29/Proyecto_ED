@@ -8,12 +8,22 @@ private Node2 root;
     }
 	
 	public Node2 find(double k, double lon, Node2 R) {
-		// si el valor el igual al key de R o R es nulo
-	    if (R.getKey() == k || R == null ) return R; 
-	    // si el valor el valor es menor al key de R, busca en el nodo
-	    // izquierdo, de lo contrario busca en el nodo derecho
-	    if (R.getKey() > k) return find(k, lon, R.getLeft()); 
-	    return find(k, lon, R.getRight()); 
+		try {
+			// si el valor el igual al key de R o R es nulo
+		    if ((R.getKey() == k && R.getLon() == lon) || R == null ) return R; 
+		    // si el valor el valor es menor al key de R, busca en el nodo
+		    // izquierdo, de lo contrario busca en el nodo derecho
+		    if (R.getKey() > k) return find(k, lon, R.getLeft()); 
+		    return find(k, lon, R.getRight());
+        } catch (NullPointerException e) {
+            return null;
+        }
+	}
+	
+	public void insertar(double lat, double lon) {
+		if (find(lat, lon, this.root) == null) {
+			insertElem(lat, lon);
+		}
 	}
 	
 	public void insertElem(double k, double lon) {
