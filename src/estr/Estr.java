@@ -7,6 +7,7 @@ package estr;
 
 import java.util.Scanner;
 import java.sql.*;
+import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
 
@@ -16,14 +17,50 @@ import javax.swing.JOptionPane;
  */
 public class Estr {
 public ListaL base;
-public ListaS cov;   
+public ListaS cov; 
+public BinaryTree[] arboles;
     public static void main(String[] args) {
         
         ListaL base = new ListaL();
+        // se instancian los 24 arboles correspondientes a las  24 horas del dia
+        BinaryTree[] arboles = new BinaryTree [23];
+        for (int i = 0; i<23;i++){
+            
+            arboles[i] = new BinaryTree();
+        }
+        
+        Prio inf = new Prio();
         ListaS cov = new ListaS("covid");
-
-
+        cov.add(4.763504,-74.068780 , 0);
+        cov.add(4.763524,-74.068180 , 1);
+        cov.add(4.763524,-74.068320 , 2);
+        cov.add(4.763569,-74.068781 , 3);
+        cov.add(4.763504,-74.068710 , 4);
+        cov.add(4.763904,-74.068123 , 5);   
         base.add(cov);
+        
+        ListaS cov1 = new ListaS("luis");
+        cov1.add(4.763204,-74.068780 , 0);
+        cov1.add(4.763524,-74.068140 , 1);
+        cov1.add(4.763524,-74.068320 , 2);
+        cov1.add(4.761569,-74.068081 , 3);
+        cov1.add(4.763504,-74.068720 , 4);
+        cov1.add(4.763894,-74.068823 , 5);
+        base.add(cov1);
+        
+        String n;
+        System.out.println("Reportar caso de COVID-19");
+        System.out.print("Ingrese el nombre del usuario:  ");
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextLine();
+        ListaS x = base.buscar(n);
+      Nodo a = x.head;
+      // se inserta cada posición en el arbol correspondiente
+      for (int i = 0; i< x.tam; i++){
+          arboles[a.hora].insertar(a.lat, a.lon);
+          a = a.verNext();
+           }
+
 /***
         System.out.println("Opciones");
         System.out.println("1: Registrar ubicaciones");
@@ -47,23 +84,7 @@ public ListaS cov;
  
         **/
         
-        try{
-            String url = "jdbc:mysql://www.viviendolo.com:3306/u804872666_ed20";
-            String usuario = "u804872666_ed20";
-            String clave = "Ed.2020";
-            Connection cn = DriverManager.getConnection(url, usuario, clave);
-            PreparedStatement pat = cn.prepareStatement("select * from ubicaciones where ID = ?");
-            pat.setString(1, "1");
-            ResultSet rs = pat.executeQuery();
-            if(rs.next()){
-                String result = rs.getString("ubicacion");
-                String result1 = rs.getString("hora");
-            }else {
-                JOptionPane.showMessageDialog(null, "fail");
-            }
-        } catch (Exception e){
-            System.out.println("error"+e);
-        }
+
 
     }
     
