@@ -10,9 +10,9 @@ package estr;
  * @author David Andrés
  */
 public class Nodo {
-    private double lon;
-    private double lat;
-    private int hora;
+    public double lon;
+    public double lat;
+    public int hora;
     private Nodo next;
     Nodo(double lon, double lat ,int hora){
         this.lon = lon;
