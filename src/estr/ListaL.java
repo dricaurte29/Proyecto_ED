@@ -54,10 +54,11 @@ public class ListaL{
 	
 	public NodeL find(String data) {
 		NodeL current = head;
-		
-		while(current.getData().nombre != data)
+		while(current != null) {
+			if(current.getData().nombre.equals(data))
+				return current;
 			current = current.getNext();
-		
+		}
 		return current;
 	}
 	
