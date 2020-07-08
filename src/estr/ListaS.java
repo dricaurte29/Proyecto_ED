@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package estr;
+package web;
 
 
 public class ListaS {
-  private Nodo head;
+  public Nodo head;
   public String nombre;
   public int contagio;
   int tam;

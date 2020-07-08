@@ -1,3 +1,5 @@
+package web;
+
 public class HashMap {
 	public ListaL[] harray; 
 	private int capacity;

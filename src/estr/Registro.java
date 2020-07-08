@@ -26,7 +26,7 @@ public class Registro {
         for(int r = 0; r<5; r++){
             System.out.print("Ubicación a las "+r+" horas:  ");
             String f = sc.nextLine();
-            lista1.add(f, r);
+           // lista1.add(f, r);
             
             
         }

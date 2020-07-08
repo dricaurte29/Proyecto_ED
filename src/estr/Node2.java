@@ -1,4 +1,4 @@
-package estr;
+package web;
 
 public class Node2 {
 	private double key; //latitud

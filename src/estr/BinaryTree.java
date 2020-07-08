@@ -1,4 +1,5 @@
-package estr;
+
+package web;
 
 public class BinaryTree {
 private Node2 root;
@@ -90,7 +91,7 @@ private Node2 root;
         return values;
     } 
 	
-	public void printTree(Node R) { 
+	public void printTree(Node2 R) { 
 		if (R != null) {
 			// preorder traversal
 			System.out.print(R.getKey());
@@ -111,3 +112,4 @@ private Node2 root;
 	
 	
 }
+
