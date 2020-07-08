@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SICO</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style> 
+  	  #map {
+        height: 100%;
+        width: 100%;
+      }
+     
+
+	</style> 
+</head>
+
+<body>
+    <header class="site-head ">
+        <div class="contenedor contenido-head">
+            <div class="barra">
+                <a href="home.html">
+                    <img src="img/logy (1).png" alt="Eficaz">
+                </a>
+                <nav class="navg">
+                    <a href="nosotros.html">Estadisticas</a>
+                    <a href="registro.html">Registro</a>
+                    <a href="datos.html">Datos</a>
+                    <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019">Más información</a>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+       
+    <main class="seccion contenedor">
+        <h2 class="fw-300 centrar-text">Registrar ubicaciones</h2>
+        <div class="contenedor-anuni">
+            <div class="contenido-anun">
+            <button class="mag" id = "bt" onclick="findMe()">
+                <img id="mg" src="img/init.png" alt="Eficaz">
+            </button>
+            <a href="reporte.html" alt="" class="boton boton-nar d-block pad">Finalizar</a>
+        </div>
+            <script>
+                function findMe(){
+
+                    if (navigator.geolocation){
+                        
+                    }
+                    function localizacion(posicion){
+                        var latitude = posicion.coords.latitude;
+                        var longitude = posicion.coords.longitude;
+                    }
+                    var image = document.getElementById("mg");
+                    image.src = "img/ani.gif";
+                    function error(){
+
+                    }
+                    navigator.geolocation.getCurrentPosition(localizacion,error);
+                }
+            </script>
+
+           
+        </div>
+    </main>
+
+</body>
+
+</html>

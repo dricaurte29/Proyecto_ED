@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SICO</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/morris.css">
+    <script src="css/morris.min.js" charset="utf-8"></script>
+    <style> 
+  	  #map {
+        height: 100%;
+        width: 100%;
+      }
+     
+
+	</style> 
+</head>
+
+<body>
+    <header class="site-head ">
+        <div class="contenedor contenido-head">
+            <div class="barra">
+                <a href="home.html">
+                    <img src="img/logy (1).png" alt="Eficaz">
+                </a>
+                <nav class="navg">
+                    <a href="nosotros.html">Estadisticas</a>
+                    <a href="registro.html">Registro</a>
+                    <a href="datos.html">Datos</a>
+                    <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019">Más información</a>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+       
+    <main class="seccion contenedor">
+        <h2 class="fw-300 centrar-text">maria perez</h2>
+        <h2 class="fw-300 centrar-text rd">Contagiado</h2>
+        <div class="contenedor-anuni">
+
+            <div class="anunci">
+                <div id ="map"> </div> 
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=initMap" async defer></script>
+                <script>
+                    var pos = [[4.640007, -74.086441],[4.637783, -74.084939],[4.634035, -74.080326],[4.653513, -74.105356]]
+                    var map;
+  	 function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+		  center: {lat: 4.636389, lng: -74.083160}, 
+          zoom: 11,
+        });
+        for (var i=0; i<pos.length; i++){
+        var marker = new google.maps.Marker({
+            position: {lat: pos[i][0], lng: pos[i][1]},      
+          map: map,
+	  title: 'Covid-19'
+        });
+    }
+
+      }
+            
+                  
+                </script>
+            
+            </div>
+            
+            
+
+           
+        </div>
+
+    </div>
+    
+    </main>
+    <script src="graf.js" charset="utf-8"></script>
+</body>
+
+</html>
